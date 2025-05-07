@@ -35,7 +35,7 @@ jobs:
             run: uv sync
 
           - name: Testing
-            run: uv run pytest --maxfail=1 --disable-warnings -q
+            run: uv run pytest --disable-warnings -q
 
     type_check:
         runs-on: windows-latest
@@ -52,7 +52,7 @@ jobs:
               run: uv sync
             
             - name: Lint
-              run: uv run mypy ppft
+              run: uv run mypy pfts
 
     security_check:
         needs: linting
@@ -69,7 +69,7 @@ jobs:
               run: uv sync
 
             - name: Security call
-              run: uv run bandit -c "pyproject.toml" -r ppft          
+              run: uv run bandit -c "pyproject.toml" -r pfts          
 
     gitleaks:
       runs-on: ubuntu-latest

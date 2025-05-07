@@ -29,7 +29,7 @@ def create_maintainer(filepath: pathlib.Path) -> Callable:
             # If file doesn't exist then create it.
             # Rather create new files than crash
             if not filepath.exists():
-                with open(filepath, "a") as fout:
+                with open(filepath, "w") as fout:
                     os.utime(filepath, None)
 
             with open(filepath, "r") as fin:
