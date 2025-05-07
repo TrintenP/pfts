@@ -9,6 +9,8 @@ on:
 
 jobs:
     generate-documentation:
+        permissions:
+          contents: write
         runs-on: windows-latest
         if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
