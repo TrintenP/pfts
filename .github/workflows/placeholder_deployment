@@ -1,0 +1,9 @@
+name: Deployment_Workflow
+
+# on:
+ # Add in specific pushes here
+
+jobs:
+  Development_Workflow:
+      uses: ./.github/workflows/development_workflow.yaml
+      secrets: inherit

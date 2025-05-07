@@ -1,0 +1,43 @@
+name: generate_docs
+
+on:
+    workflow_run:
+        workflows: ["development_workflow"]
+        branches: ["main"]
+        types:
+            - completed
+
+jobs:
+    generate-documentation:
+        runs-on: windows-latest
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
+        steps:
+        - name: Checkout the repository
+          uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
+
+        - name: Setup Environment
+          uses: ./.github/workflows/setup_code
+
+        - name: Install the project
+          run : uv sync
+
+        - name: Build Sphinx documentation
+          run: |
+            cd docs
+            uv run --frozen sphinx-apidoc -o ./source ../ppft
+            uv run --frozen make html
+            
+        - name: Upload documentation as an artifact
+          uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4.6.2
+          with:
+            name: sphinx-docs
+            path: docs/build/html
+
+        - name: Deploy to GitHub Pages
+          uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e  # v4.0.0
+          if: github.ref == 'refs/heads/main'
+          with:
+                github_token: ${{ secrets.GITHUB_TOKEN }}
+                publish_dir: docs/build/html
+
