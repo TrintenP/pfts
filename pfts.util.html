@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>pfts.util package &#8212; Patten&#39;s Financial Tools Suite 0.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="pfts package" href="pfts.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pfts.html" title="pfts package"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Patten&#39;s Financial Tools Suite 0.0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >pfts</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="pfts.html" accesskey="U">pfts package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pfts.util package</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="pfts-util-package">
+<h1>pfts.util package<a class="headerlink" href="#pfts-util-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-pfts.util.entrypoints">
+<span id="pfts-util-entrypoints-module"></span><h2>pfts.util.entrypoints module<a class="headerlink" href="#module-pfts.util.entrypoints" title="Link to this heading">¶</a></h2>
+<p>Describes the different entry points for this tool.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="pfts.util.entrypoints.generate_documentation">
+<span class="sig-prename descclassname"><span class="pre">pfts.util.entrypoints.</span></span><span class="sig-name descname"><span class="pre">generate_documentation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pfts.util.entrypoints.generate_documentation" title="Link to this definition">¶</a></dt>
+<dd><p>Generate documentation for the current codebase and opens it.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pfts.util.entrypoints.run_local_ci">
+<span class="sig-prename descclassname"><span class="pre">pfts.util.entrypoints.</span></span><span class="sig-name descname"><span class="pre">run_local_ci</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pfts.util.entrypoints.run_local_ci" title="Link to this definition">¶</a></dt>
+<dd><p>Runs a local version of the CI pipeline.</p>
+<p>Useful when remembered.
+:return: Return True on succesful execution, otherwise returns False.
+:rtype: bool</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pfts.util.entrypoints.run_pfts">
+<span class="sig-prename descclassname"><span class="pre">pfts.util.entrypoints.</span></span><span class="sig-name descname"><span class="pre">run_pfts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pfts.util.entrypoints.run_pfts" title="Link to this definition">¶</a></dt>
+<dd><p>Runs the tool in general command line mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>arg_list</strong> (<em>list</em><em> | </em><em>None</em><em>, </em><em>optional</em>) – List of args to use, defaults to None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pfts.util.entrypoints.run_testing">
+<span class="sig-prename descclassname"><span class="pre">pfts.util.entrypoints.</span></span><span class="sig-name descname"><span class="pre">run_testing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pfts.util.entrypoints.run_testing" title="Link to this definition">¶</a></dt>
+<dd><p>Run the entire test suite, and potentially generate a coverage file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>arg_list</strong> (<em>list</em><em> | </em><em>None</em>) – CLI Interface, defaults to None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pfts.util.general">
+<span id="pfts-util-general-module"></span><h2>pfts.util.general module<a class="headerlink" href="#module-pfts.util.general" title="Link to this heading">¶</a></h2>
+<p>Contains general utility functions.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="pfts.util.general.bump_version">
+<span class="sig-prename descclassname"><span class="pre">pfts.util.general.</span></span><span class="sig-name descname"><span class="pre">bump_version</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">part</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">testing_mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pfts.util.general.bump_version" title="Link to this definition">¶</a></dt>
+<dd><p>Increments either the major, minor, or patch version of the pfts module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>part</strong> (<em>str</em>) – Which part of the version to increment.</p></li>
+<li><p><strong>testing_mode</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to run in debug mode or not, defaults to False</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>If debugging, return new version info. Otherwise return nothing.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str|None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pfts.util.general.insert_into_file">
+<span class="sig-prename descclassname"><span class="pre">pfts.util.general.</span></span><span class="sig-name descname"><span class="pre">insert_into_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">insert_portion</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rest_of_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">insert_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pfts.util.general.insert_into_file" title="Link to this definition">¶</a></dt>
+<dd><p>Take a line and insert it into a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filepath</strong> (<em>pathlib.Path</em>) – Location of the file to work with.</p></li>
+<li><p><strong>insert_portion</strong> (<em>str</em>) – The line being inserted.</p></li>
+<li><p><strong>rest_of_files</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – The rest of the file, in order.</p></li>
+<li><p><strong>insert_index</strong> (<em>int</em>) – Where to insert the new line.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pfts.util.general.return_true">
+<span class="sig-prename descclassname"><span class="pre">pfts.util.general.</span></span><span class="sig-name descname"><span class="pre">return_true</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#pfts.util.general.return_true" title="Link to this definition">¶</a></dt>
+<dd><p>Allows for testing that every imports as expected.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Will always return True</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pfts.util.general.split_version_line">
+<span class="sig-prename descclassname"><span class="pre">pfts.util.general.</span></span><span class="sig-name descname"><span class="pre">split_version_line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pfts.util.general.split_version_line" title="Link to this definition">¶</a></dt>
+<dd><p>Takes in a version declaration, creates dict of version information.</p>
+<p>__version__ = ‘X.Y.Z’ → {major: X, minor: Y, patch: Z}</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>version</strong> (<em>str</em>) – Line containing the version definition.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Version dictionary split by major, minor and patch parts.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pfts.util.parsing">
+<span id="pfts-util-parsing-module"></span><h2>pfts.util.parsing module<a class="headerlink" href="#module-pfts.util.parsing" title="Link to this heading">¶</a></h2>
+<p>Contains functions that will handle different forms of parsing.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="pfts.util.parsing.parse_init_file">
+<span class="sig-prename descclassname"><span class="pre">pfts.util.parsing.</span></span><span class="sig-name descname"><span class="pre">parse_init_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#pfts.util.parsing.parse_init_file" title="Link to this definition">¶</a></dt>
+<dd><p>Parse version information out from the given the __init__ file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filepath</strong> (<em>pathlib.Path</em>) – The file that contains version information.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Line index of version location. -1 if logging information missing.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pfts.util.parsing.parse_input">
+<span class="sig-prename descclassname"><span class="pre">pfts.util.parsing.</span></span><span class="sig-name descname"><span class="pre">parse_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Namespace</span></span></span><a class="headerlink" href="#pfts.util.parsing.parse_input" title="Link to this definition">¶</a></dt>
+<dd><p>Parses inputs from command line, and creates a namespace for them.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>arg_list</strong> (<em>list</em>) – CMD-styled inputs of strings, defaults to sys.argv[1:]</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Namespace that contains all parsed inputs for the given arguements</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>argparse.Namespace</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pfts.util">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pfts.util" title="Link to this heading">¶</a></h2>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">pfts.util package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-pfts.util.entrypoints">pfts.util.entrypoints module</a><ul>
+<li><a class="reference internal" href="#pfts.util.entrypoints.generate_documentation"><code class="docutils literal notranslate"><span class="pre">generate_documentation()</span></code></a></li>
+<li><a class="reference internal" href="#pfts.util.entrypoints.run_local_ci"><code class="docutils literal notranslate"><span class="pre">run_local_ci()</span></code></a></li>
+<li><a class="reference internal" href="#pfts.util.entrypoints.run_pfts"><code class="docutils literal notranslate"><span class="pre">run_pfts()</span></code></a></li>
+<li><a class="reference internal" href="#pfts.util.entrypoints.run_testing"><code class="docutils literal notranslate"><span class="pre">run_testing()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-pfts.util.general">pfts.util.general module</a><ul>
+<li><a class="reference internal" href="#pfts.util.general.bump_version"><code class="docutils literal notranslate"><span class="pre">bump_version()</span></code></a></li>
+<li><a class="reference internal" href="#pfts.util.general.insert_into_file"><code class="docutils literal notranslate"><span class="pre">insert_into_file()</span></code></a></li>
+<li><a class="reference internal" href="#pfts.util.general.return_true"><code class="docutils literal notranslate"><span class="pre">return_true()</span></code></a></li>
+<li><a class="reference internal" href="#pfts.util.general.split_version_line"><code class="docutils literal notranslate"><span class="pre">split_version_line()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-pfts.util.parsing">pfts.util.parsing module</a><ul>
+<li><a class="reference internal" href="#pfts.util.parsing.parse_init_file"><code class="docutils literal notranslate"><span class="pre">parse_init_file()</span></code></a></li>
+<li><a class="reference internal" href="#pfts.util.parsing.parse_input"><code class="docutils literal notranslate"><span class="pre">parse_input()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-pfts.util">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="pfts.html"
+                          title="previous chapter">pfts package</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pfts.util.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pfts.html" title="pfts package"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Patten&#39;s Financial Tools Suite 0.0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >pfts</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="pfts.html" >pfts package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pfts.util package</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025, Trinten Patten.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>
