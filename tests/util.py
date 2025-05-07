@@ -29,8 +29,12 @@ def create_maintainer(filepath: pathlib.Path) -> Callable:
             # If file doesn't exist then create it.
             # Rather create new files than crash
             if not filepath.exists():
+                # If the parent folder doesn't exist then create
+                if not filepath.parent.exists():
+                    filepath.parent.mkdir()
+
                 with open(filepath, "w") as fout:
-                    os.utime(filepath, None)
+                    ...
 
             with open(filepath, "r") as fin:
                 old_data = fin.readlines()
