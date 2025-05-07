@@ -25,7 +25,7 @@ jobs:
         - name: Build Sphinx documentation
           run: |
             cd docs
-            uv run --frozen sphinx-apidoc -o ./source ../ppft
+            uv run --frozen sphinx-apidoc -o ./source ../pfts
             uv run --frozen make html
             
         - name: Upload documentation as an artifact
