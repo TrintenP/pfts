@@ -106,15 +106,25 @@ def run_local_ci() -> bool:
         (bandit_args, "security checks"),
     ]
 
+    ret_val = True
+
     try:
         for arg_set, print_statement in list_of_args:
             logger.debug(f"Running {print_statement} now!")
-            subprocess.call(arg_set)  # nosec B603
+            status = subprocess.call(
+                arg_set, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
+            )  # nosec B603
+            if status == 0:
+                logger.debug(f"{print_statement} were successful!")
+            else:
+                logger.debug(f"{print_statement} failed!")
+                ret_val = False
     except Exception as e:
         logger.exception(e)
-        return False
+        ret_val = False
+        return ret_val
 
-    return True
+    return ret_val
 
 
 def run_pfts(arg_list: list | None = None) -> None:

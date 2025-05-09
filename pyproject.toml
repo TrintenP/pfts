@@ -48,8 +48,11 @@ version-bump = "pfts.util.entrypoints:version_bump"
 [tool.uv.sources]
 pfts = { workspace = true }
 
-[tool.setuptools]
-packages = ["pfts", "pfts.util"]
+[tool.setuptools.packages.find]
+where = ["."] # list of folders that contain the packages (["."] by default)
+include = ["pfts*"] # package names should match these glob patterns (["*"] by default)
+exclude = ["tests*"] # exclude packages matching these glob patterns (empty by default)
+namespaces = false
 
 [tool.setuptools.dynamic]
 version = {attr = "pfts.__version__"}
@@ -68,6 +71,9 @@ packages = ["pfts"]
 
 [tool.pytest.ini_options]
 pythonpath = "pfts"
+addopts = [
+    "--import-mode=importlib"
+]
 
 [tool.ruff]
 line-length = 79

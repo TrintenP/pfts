@@ -1,7 +1,6 @@
 """Utility functions for testing"""
 
 import functools
-import os
 import pathlib
 from typing import Callable
 
