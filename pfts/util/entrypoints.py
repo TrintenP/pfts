@@ -146,4 +146,5 @@ def run_pfts(arg_list: list | None = None) -> None:
     # Only worry about bumping the version if dev mode is enabled
     if args.dev:
         if args.vbump:
-            general.bump_version(args.vbump)
+            new_version = general.bump_version(args.vbump)
+            logger.info(f"New Version is: {new_version}")

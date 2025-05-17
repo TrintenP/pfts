@@ -69,16 +69,17 @@ def log_context(_func: Callable) -> Callable:
                 f"Function {func.__name__} called with args {signature}"
             )
             try:
-                return func(*args, **kwargs)
+                returned_val = func(*args, **kwargs)
+                return returned_val
             except Exception as e:
                 logger.exception(
                     f"Exception raised in {func.__name__}. Exception: {str(e)}"
                 )
+                returned_val = None
                 raise e
             finally:
                 logger.debug(
-                    f"Function {func.__name__} returned: "
-                    f"{func(*args, **kwargs)}"
+                    f"Function {func.__name__} returned: {returned_val}"
                 )
 
         return wrapper
