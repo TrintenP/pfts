@@ -3,52 +3,30 @@
 
 PFTS was created as a personal project that will explore how to code a variety of personal finance tools in Python. 
 
-- **Documentation**:  https://trintenp.github.io/pfts/
-- **Source Code**: https://github.com/TrintenP/pfts
-- **Bug Reports**: https://github.com/TrintenP/pfts/issues
+# Prerequisites
+1. Basic command-line knowledge
+2. Python 3.13 installed on their machine
 
-## Installation:
-- Ensure that Python version installed is 3.13 or better:
-    - `python --version`
-- Install uv package manager
-    - `pip install uv`
-- Clone GIT repo
-    - `git clone https://github.com/TrintenP/pfts.git`
-- Change into Cloned repo
-    - `cd pfts` 
-- Create virtual environment
-    - `uv venv --python 3.13`
-- Activate Environment
-    - `.venv\Scripts\activate`
-- Update virtual environment
-    - `uv sync`
-- Run commands (See Usage section)
-    - `uv run <command>`
+# Installation
+`pip install pfts`
 
-## General Usage
+# General Usage
 This project will create a set of entry points that can be used in the console. 
 
-`pfts`: Will run pfts while parsing command line inputs. 
+`pfts`: Will parse command line for arguments. 
 
-- Arguements:
+- Arguments:
     - TBA
 
 
-## Development Usage
-This section is to provide additional information for how to develop ppft further.
+# Development Usage
+This section is to provide additional information for how to use the developer CLI.
 
-Commands:
+### Commands:
 `generate-docs`: Will automatically generate, and open, a local copy of documentation.
 
-`run-testing`: Will run the entire test suite for pfts, generate a coverage report, and open it.
+`run-testing [--disablecov | ]`: Will run the entire test suite for pfts, generate a coverage report, and open it.
 
 `local-ci`: Run through a local version of the CI pipeline to ensure code is up to standard.
 
-`version-bump`: Utility tool for increasing the version of pfts.
-
-Adding / Removing packages:
-- uv add <packageName>
-- uv remove <packageName>
-
-Building project:
-- uv build --no-sources
+`version-bump --vbump <major|minor|patch>`: Quality of Life script that bumps pfts version.

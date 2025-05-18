@@ -11,9 +11,9 @@ description = "Collection of personal finance tools."
 requires-python = ">=3.13"
 classifiers = [
     "Development Status :: 3 - Alpha",
-    "Intended Audience :: Personal Usage",
+    "Intended Audience :: End Users/Desktop",
     "Programming Language :: Python :: 3.13",
-    "Operating System :: Windows"
+    "Operating System :: Microsoft :: Windows"
 ]
 dynamic = ["readme","version"]
 dependencies = [
@@ -22,7 +22,6 @@ dependencies = [
     "pytest==8.3.5",
     "setuptools==78.1.0",
     "sphinx==8.2.3",
-    "pfts",
     "mypy==1.15.0",
     "bandit==1.8.3",
     "ruff==0.11.8",
@@ -30,7 +29,7 @@ dependencies = [
 
 [project.urls]
 HomePage = "https://github.com/TrintenP/pfts"
-Documentation = "https://github.com/TrintenP/pfts/wiki"
+Documentation = "https://trintenp.github.io/pfts/"
 Issues = "https://github.com/TrintenP/pfts/issues"
 ChangeLog = "https://github.com/TrintenP/pfts/blob/main/Changelog.MD"
 
@@ -38,8 +37,8 @@ ChangeLog = "https://github.com/TrintenP/pfts/blob/main/Changelog.MD"
 generate-docs = "pfts.util.entrypoints:generate_documentation"
 run-testing = "pfts.util.entrypoints:run_testing"
 local-ci = "pfts.util.entrypoints:run_local_ci"
-pfts = "pfts.util.entrypoints:run_pfts"
 version-bump = "pfts.util.entrypoints:version_bump"
+pfts = "pfts.util.entrypoints:run_pfts"
 
 [gui_scripts]
 # Launch the GUI command
@@ -47,6 +46,13 @@ version-bump = "pfts.util.entrypoints:version_bump"
 
 [tool.uv.sources]
 pfts = { workspace = true }
+
+# Useful for testing packaging, without cluttering up the official PyPi index
+[[tool.uv.index]]
+name="testpypi"
+url="https://test.pypi.org/simple/"  # Look for packages on actual server.
+publish-url="https://test.pypi.org/legacy/"
+explict=true
 
 [tool.setuptools.packages.find]
 where = ["."] # list of folders that contain the packages (["."] by default)
@@ -56,7 +62,7 @@ namespaces = false
 
 [tool.setuptools.dynamic]
 version = {attr = "pfts.__version__"}
-readme  = { file = ["README.MD"]}
+readme  = { file = ["README.MD"], content-type="text/markdown"}
 
 [tool.bandit]
 exclude_dirs = ['tests', ".venv"]

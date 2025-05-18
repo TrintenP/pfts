@@ -37,7 +37,7 @@ def parse_input(arg_list: list | None = None) -> argparse.Namespace:
         "--vbump",
         nargs="?",  # 0/1 arguements
         const="patch",  # The default if there are 0 args
-        help="Increase any portion of the version. Requires dev mode.",
+        help="Increase any portion of the version.",
     )
 
     parser.add_argument(

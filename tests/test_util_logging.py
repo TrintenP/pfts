@@ -5,8 +5,8 @@ import pathlib
 
 import pytest
 
-from pfts.util import logging as pfts_log
 from pfts.util import general as pfts_gen
+from pfts.util import logging as pfts_log
 from tests.util import maintain_log, maintain_mock_init
 
 LOGGER = logging.getLogger(__name__)

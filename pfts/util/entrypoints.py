@@ -40,8 +40,9 @@ def generate_documentation() -> None:
     make_clean_args = [make_location, "clean"]
     make_run_args = [make_location, "html"]
 
+    logger.info("Removing all existing docs under build.")
     # Remove any previous documents just in case
-    subprocess.call(make_clean_args)  # nosec B603
+    subprocess.call(make_clean_args, stdout=subprocess.DEVNULL)  # nosec B603
 
     make_rtncode = subprocess.call(make_run_args, stdout=subprocess.DEVNULL)  # nosec B603
 
@@ -124,6 +125,11 @@ def run_local_ci() -> bool:
         ret_val = False
         return ret_val
 
+    if ret_val:
+        logger.info("All CI checks have passed!")
+    else:
+        logger.info("A CI check has failed, please check the logs.")
+
     return ret_val
 
 
@@ -139,12 +145,24 @@ def run_pfts(arg_list: list | None = None) -> None:
     args = parse_input(arg_list)
 
     log_level = logging.DEBUG if args.dev else logging.WARNING
-
     setup_logging(log_level)
     logger.info(f"Successfully loaded in the following args: {args}")
 
-    # Only worry about bumping the version if dev mode is enabled
-    if args.dev:
-        if args.vbump:
-            new_version = general.bump_version(args.vbump)
-            logger.info(f"New Version is: {new_version}")
+
+def version_bump(arg_list: list | None = None) -> None:
+    """Quality of life function to bump the version numbering.
+
+    :param arg_list: CLI Iterface, defaults to None
+    :type arg_list: list | None
+    """
+
+    # Avoids list gotcha
+    # None will result in sys.argv[1:]
+    args = parse_input(arg_list)
+
+    log_level = logging.DEBUG if args.dev else logging.WARNING
+    setup_logging(log_level)
+    logger.info(f"Successfully loaded in the following args: {args}")
+
+    new_version = general.bump_version(args.vbump)
+    logger.info(f"New version is: {new_version}")
