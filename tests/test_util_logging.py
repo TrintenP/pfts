@@ -6,7 +6,8 @@ import pathlib
 import pytest
 
 from pfts.util import logging as pfts_log
-from tests.util import maintain_log
+from pfts.util import general as pfts_gen
+from tests.util import maintain_log, maintain_mock_init
 
 LOGGER = logging.getLogger(__name__)
 
@@ -129,3 +130,24 @@ def test_log_context_exception(capsys):
     assert (
         "exception raised in raise_exception. exception: " in captured_messages
     )
+
+
+@maintain_log
+@maintain_mock_init
+def test_log_context_no_doubling(capsys):
+    """Special case, where bug in logging context caused a function to be
+    double called. Once for the inputs, and once for the outputs.
+    This test should verify that doesn't happen anymore."""
+
+    pfts_log.setup_logging(10)
+
+    # Version should go from 1.2.3 → 1.2.4
+    # Bug would make the version go 1.2.3 → 1.2.5
+    pfts_gen.bump_version("patch", True)
+
+    # Debug level errors will only show up in stderr
+    captured_messages = capsys.readouterr().err.lower()
+
+    bad_version_info = "function bump_version returned: 1.2.5"
+
+    assert bad_version_info not in captured_messages
